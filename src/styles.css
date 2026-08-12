@@ -319,3 +319,16 @@
     transform: translateY(14px);
   }
 }
+
+/* ── Hash-link scroll offset ──────────────────────────────────────────────
+   Prevents the fixed header (≈72px) from covering the section heading
+   when the browser scrolls to an anchor (#services, #faq, etc.)
+   ─────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+

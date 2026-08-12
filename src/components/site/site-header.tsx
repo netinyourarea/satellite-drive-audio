@@ -1,10 +1,39 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Radio } from "lucide-react";
+import { Link, useLocation } from "@tanstack/react-router";
 import { navLinks } from "./nav-links";
+
+/**
+ * After a route change that includes a hash, scroll the target element into view.
+ * TanStack Router doesn't scroll to hash by default, so we handle it here.
+ */
+function useHashScroll() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash; // e.g. "#faq" or ""
+    if (!hash) return;
+
+    // Give the page time to render before scrolling
+    const id = hash.replace("#", "");
+    const attempt = (retries: number) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (retries > 0) {
+        setTimeout(() => attempt(retries - 1), 120);
+      }
+    };
+    setTimeout(() => attempt(8), 100);
+  }, [location.hash, location.pathname]);
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useHashScroll();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -20,6 +49,39 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  /** Close mobile drawer and, if hash present, scroll to it */
+  const handleNavClick = (href: string) => {
+    setOpen(false);
+
+    // If clicking the same page's hash link, scroll immediately
+    const [path, hash] = href.split("#");
+    const currentPath = location.pathname.replace(/\/$/, "") || "/";
+    const targetPath  = (path || "/").replace(/\/$/, "") || "/";
+
+    if (hash && currentPath === targetPath) {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const linkClass = (active = false) =>
+    `text-[0.82rem] font-medium transition-colors ${
+      active
+        ? scrolled
+          ? "text-primary font-semibold"
+          : "text-amber-300 font-semibold"
+        : scrolled
+        ? "text-muted-foreground hover:text-foreground"
+        : "text-white/80 hover:text-white"
+    }`;
+
+  /** Determine if a nav link should be "active" */
+  const isActive = (href: string) => {
+    const [path] = href.split("#");
+    if (!path || path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path.replace(/\/$/, ""));
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -29,7 +91,12 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto grid max-w-[88rem] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10">
-        <a href="#home" className="flex min-w-0 items-center gap-3">
+        {/* Logo / brand */}
+        <Link
+          to="/"
+          className="flex min-w-0 items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
           <span
             className={`grid size-10 shrink-0 place-items-center rounded-xl ring-1 transition-colors ${
               scrolled
@@ -55,30 +122,30 @@ export function SiteHeader() {
               In-Car Entertainment Assistance
             </span>
           </span>
-        </a>
+        </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden items-center gap-6 xl:flex">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
-              className={`text-[0.82rem] font-medium transition-colors ${
-                scrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
-              }`}
+              to={l.href}
+              onClick={() => handleNavClick(l.href)}
+              className={linkClass(isActive(l.href))}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact/"
+            onClick={() => setOpen(false)}
             className="rounded-full bg-primary px-5 py-2.5 text-[0.82rem] font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.03]"
           >
             Get Started
-          </a>
+          </Link>
         </nav>
 
+        {/* Mobile hamburger */}
         <button
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -93,26 +160,31 @@ export function SiteHeader() {
         </button>
       </div>
 
+      {/* Mobile drawer */}
       {open && (
         <div className="animate-fade-in border-t border-border bg-background/98 backdrop-blur-xl xl:hidden">
           <nav className="mx-auto flex max-w-[88rem] flex-col px-5 py-3">
             {navLinks.map((l) => (
-              <a
+              <Link
                 key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3.5 text-base font-medium text-foreground/90"
+                to={l.href}
+                onClick={() => handleNavClick(l.href)}
+                className={`border-b border-border/60 py-3.5 text-base font-medium ${
+                  isActive(l.href)
+                    ? "text-primary font-semibold"
+                    : "text-foreground/90"
+                }`}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/contact/"
               onClick={() => setOpen(false)}
               className="mt-5 mb-3 rounded-full bg-primary px-6 py-3.5 text-center text-sm font-bold text-primary-foreground"
             >
               Get Started
-            </a>
+            </Link>
           </nav>
         </div>
       )}
