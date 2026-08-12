@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satellite Drive Audio | Satellite Radio &amp; In-Car Entertainment Help</title>
+    <meta
+      name="description"
+      content="Satellite Drive Audio helps drivers explore satellite radio and connected entertainment options, check vehicle compatibility, and get personalized guidance."
+    />
+    <link rel="canonical" href="https://satellitedriveaudio.com/" />
+    
+    <!-- Open Graph & Social SEO -->
+    <meta property="og:title" content="Satellite Drive Audio | Satellite Radio Assistance" />
+    <meta
+      property="og:description"
+      content="Independent assistance for satellite radio, vehicle compatibility guidance and in-car entertainment support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://satellitedriveaudio.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Satellite Drive Audio | Satellite Radio Assistance" />
+    <meta name="twitter:description" content="Independent assistance for satellite radio, vehicle compatibility guidance and in-car entertainment support." />
+    <meta name="author" content="Satellite Drive Audio" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.svg" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Google Analytics 4 & Google Tag Manager (GA4 & GTM Template) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MEASUREMENT_ID');
+    </script>
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+
+    <!-- Global Event Tracking Script (Phone Clicks, Form Submissions, Scroll) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Track Phone Calls
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (window.gtag) gtag('event', 'phone_call_click', { event_category: 'contact', event_label: this.href });
+          });
+        });
+        // Track Email Clicks
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            if (window.gtag) gtag('event', 'email_click', { event_category: 'contact', event_label: this.href });
+          });
+        });
+      });
+    </script>
+
+    <!-- Structured Data Schemas (Organization, WebSite, LocalBusiness, FAQ) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://satellitedriveaudio.com/#organization",
+            "name": "Satellite Drive Audio",
+            "url": "https://satellitedriveaudio.com/",
+            "logo": "https://satellitedriveaudio.com/favicon.svg",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-888-402-7719",
+              "contactType": "customer service",
+              "email": "support@satellitedriveaudio.com",
+              "areaServed": "US",
+              "availableLanguage": "English"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://satellitedriveaudio.com/#website",
+            "url": "https://satellitedriveaudio.com/",
+            "name": "Satellite Drive Audio",
+            "publisher": {
+              "@id": "https://satellitedriveaudio.com/#organization"
+            }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://satellitedriveaudio.com/#business",
+            "name": "Satellite Drive Audio",
+            "url": "https://satellitedriveaudio.com/",
+            "telephone": "+1-888-402-7719",
+            "email": "support@satellitedriveaudio.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2140 Meridian Way, Suite 300",
+              "addressLocality": "Columbus",
+              "addressRegion": "OH",
+              "postalCode": "43215",
+              "addressCountry": "US"
+            },
+            "openingHours": "Mo-Fr 08:00-20:00, Sa 09:00-17:00"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is satellite radio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Satellite radio is a subscription-based audio service delivered by satellite rather than local AM/FM towers, ensuring consistent nationwide coverage."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does my vehicle support satellite radio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Vehicle support depends on year, make, model, and trim. Satellite Drive Audio provides compatibility checks to guide your options."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
