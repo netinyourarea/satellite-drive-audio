@@ -31,7 +31,7 @@ function TermsOfServicePage() {
 
           <h2 className="text-xl font-bold text-foreground">3. Contact</h2>
           <p>
-            Questions? Contact support@satellitedriveaudio.com or call (888) 402-7719.
+            Questions? Call (866) 381-4782.
           </p>
         </div>
       </main>

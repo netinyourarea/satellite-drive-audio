@@ -36,7 +36,7 @@ function PrivacyPolicyPage() {
 
           <h2 className="text-xl font-bold text-foreground">4. Contact Information</h2>
           <p>
-            If you have questions regarding this privacy policy, please contact us at support@satellitedriveaudio.com or (888) 402-7719.
+            If you have questions regarding this privacy policy, please contact us at (866) 381-4782.
           </p>
         </div>
       </main>

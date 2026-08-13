@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Radio } from "lucide-react";
+import { Menu, X, Radio, Phone } from "lucide-react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { navLinks } from "./nav-links";
 
@@ -136,13 +136,13 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/contact/"
+          <a
+            href="tel:+18663814782"
             onClick={() => setOpen(false)}
-            className="rounded-full bg-primary px-5 py-2.5 text-[0.82rem] font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.03]"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-[0.82rem] font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.03]"
           >
-            Get Started
-          </Link>
+            <Phone className="size-3.5" /> (866) 381-4782
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -178,13 +178,13 @@ export function SiteHeader() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              to="/contact/"
+            <a
+              href="tel:+18663814782"
               onClick={() => setOpen(false)}
-              className="mt-5 mb-3 rounded-full bg-primary px-6 py-3.5 text-center text-sm font-bold text-primary-foreground"
+              className="mt-5 mb-3 flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-center text-sm font-bold text-primary-foreground"
             >
-              Get Started
-            </Link>
+              <Phone className="size-4" /> (866) 381-4782
+            </a>
           </nav>
         </div>
       )}

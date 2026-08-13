@@ -26,7 +26,7 @@ function RefundPolicyPage() {
 
           <h2 className="text-xl font-bold text-foreground">2. Customer Support</h2>
           <p>
-            If you have any questions regarding a charge or service, please reach out to our team at support@satellitedriveaudio.com or call (888) 402-7719.
+            If you have any questions regarding a charge or service, please reach out to our team at (866) 381-4782.
           </p>
         </div>
       </main>

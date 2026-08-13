@@ -1,41 +1,14 @@
-import { Phone, Mail, Clock, MapPin, Radio } from "lucide-react";
+import { Phone, Radio } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const columns = [
   {
     title: "Company",
     links: [
-      { label: "About Us",            href: "/about-us/" },
-      { label: "How It Works",        href: "/services/#how-it-works" },
-      { label: "Why Satellite Drive", href: "/about-us/#support" },
-      { label: "Contact",             href: "/contact/" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { label: "Satellite Radio Assistance",       href: "/services/" },
-      { label: "Vehicle Compatibility Guidance",   href: "/services/#compatibility" },
-      { label: "Account & Activation Guidance",    href: "/services/" },
-      { label: "In-Car Entertainment Support",     href: "/services/" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Satellite Radio Basics", href: "/#satellite-radio" },
-      { label: "Technology Guide",       href: "/#technology" },
-      { label: "Compatibility Check",    href: "/services/#compatibility" },
-      { label: "FAQ",                    href: "/contact/#faq" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Help Center",       href: "/contact/#faq" },
-      { label: "Request Guidance",  href: "/contact/" },
-      { label: "Service Hours",     href: "/contact/" },
-      { label: "Feedback",          href: "/contact/" },
+      { label: "About Us",       href: "/about-us/" },
+      { label: "Services",       href: "/services/" },
+      { label: "FAQ",            href: "/contact/#faq" },
+      { label: "Contact",        href: "/contact/" },
     ],
   },
   {
@@ -43,7 +16,6 @@ const columns = [
     links: [
       { label: "Privacy Policy",     href: "/privacy-policy/" },
       { label: "Terms & Conditions", href: "/terms-of-service/" },
-      { label: "Disclaimer",         href: "/terms-of-service/" },
       { label: "Refund Policy",      href: "/refund-policy/" },
     ],
   },
@@ -53,7 +25,7 @@ export function SiteFooter() {
   return (
     <footer id="legal" className="border-t border-border bg-surface/40">
       <div className="mx-auto max-w-[88rem] px-5 py-16 lg:px-10 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_2.7fr]">
+        <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
           <div>
             <Link to="/" className="flex min-w-0 items-center gap-3">
               <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/15 ring-1 ring-primary/30">
@@ -68,31 +40,14 @@ export function SiteFooter() {
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
-                <a href="tel:8884027719" className="hover:text-primary transition-colors">
-                  (888) 402-7719
+                <a href="tel:8663814782" className="hover:text-primary transition-colors">
+                  (866) 381-4782
                 </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
-                <a
-                  href="mailto:support@satellitedriveaudio.com"
-                  className="hover:text-primary transition-colors"
-                >
-                  support@satellitedriveaudio.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span>2140 Meridian Way, Suite 300, Columbus, OH 43215</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span>Mon–Fri 8:00 AM – 8:00 PM ET · Sat 9:00 AM – 5:00 PM ET</span>
               </li>
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-8 sm:justify-self-end">
             {columns.map((col) => (
               <div key={col.title} className="min-w-0">
                 <h3 className="text-[0.7rem] font-bold tracking-[0.18em] text-foreground uppercase">
