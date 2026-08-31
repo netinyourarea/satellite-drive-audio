@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Radio, Phone } from "lucide-react";
 import { Link, useLocation } from "@tanstack/react-router";
+import { SITE_PHONE } from "@/lib/site-contact";
 import { navLinks } from "./nav-links";
 
 /**
