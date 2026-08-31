@@ -137,11 +137,11 @@ export function SiteHeader() {
             </Link>
           ))}
           <a
-            href="tel:+18663814782"
+            href={`tel:${SITE_PHONE.raw}`}
             onClick={() => setOpen(false)}
             className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-[0.82rem] font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.03]"
           >
-            <Phone className="size-3.5" /> (866) 381-4782
+            <Phone className="size-3.5" /> {SITE_PHONE.display}
           </a>
         </nav>
 
@@ -179,11 +179,11 @@ export function SiteHeader() {
               </Link>
             ))}
             <a
-              href="tel:+18663814782"
+              href={`tel:${SITE_PHONE.raw}`}
               onClick={() => setOpen(false)}
               className="mt-5 mb-3 flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-center text-sm font-bold text-primary-foreground"
             >
-              <Phone className="size-4" /> (866) 381-4782
+              <Phone className="size-4" /> {SITE_PHONE.display}
             </a>
           </nav>
         </div>

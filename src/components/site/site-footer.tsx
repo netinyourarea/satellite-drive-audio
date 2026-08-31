@@ -1,5 +1,6 @@
 import { Phone, Radio } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { SITE_PHONE } from "@/lib/site-contact";
 
 const columns = [
   {
@@ -40,8 +41,8 @@ export function SiteFooter() {
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
-                <a href="tel:8663814782" className="hover:text-primary transition-colors">
-                  (866) 381-4782
+                <a href={`tel:${SITE_PHONE.raw}`} className="hover:text-primary transition-colors">
+                  {SITE_PHONE.display}
                 </a>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SITE_PHONE } from "@/lib/site-contact";
 
 export const Route = createFileRoute("/terms-of-service")({
   component: TermsOfServicePage,
@@ -31,7 +32,7 @@ function TermsOfServicePage() {
 
           <h2 className="text-xl font-bold text-foreground">3. Contact</h2>
           <p>
-            Questions? Call (866) 381-4782.
+            Questions? Call {SITE_PHONE.display}.
           </p>
         </div>
       </main>

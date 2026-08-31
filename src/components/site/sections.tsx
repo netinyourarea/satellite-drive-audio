@@ -19,6 +19,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Reveal } from "./reveal";
+import { SITE_PHONE } from "@/lib/site-contact";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 import driverInfotainment from "@/assets/driver-infotainment.jpg";
@@ -176,7 +177,7 @@ export function Hero() {
           {/* Action CTAs */}
           <div className="hero-fade-up-4 mt-8 flex flex-col gap-3.5 sm:flex-row">
             <a
-              href="tel:+18663814782"
+              href={`tel:${SITE_PHONE.raw}`}
               className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-[1.02]"
               style={{
                 background: "linear-gradient(135deg, oklch(0.72 0.19 58), oklch(0.58 0.22 42))",
@@ -184,11 +185,11 @@ export function Hero() {
                 boxShadow: "0 4px 24px oklch(0.65 0.19 55 / 45%)",
               }}
             >
-              Call (866) 381-4782
+              Call {SITE_PHONE.display}
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
-              href="tel:+18663814782"
+              href={`tel:${SITE_PHONE.raw}`}
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-[1.02]"
               style={{
                 background: "oklch(1 0 0 / 12%)",
@@ -381,10 +382,10 @@ export function Services() {
                     {s.body}
                   </p>
                   <a
-                    href="tel:+18663814782"
+                    href={`tel:${SITE_PHONE.raw}`}
                     className="mt-1 inline-flex w-fit items-center gap-2 text-sm font-bold text-primary transition-transform duration-200 group-hover:translate-x-1"
                   >
-                    Call (866) 381-4782 <ArrowRight className="size-4" />
+                    Call {SITE_PHONE.display} <ArrowRight className="size-4" />
                   </a>
                 </div>
               </article>
@@ -666,10 +667,10 @@ export function CinematicBanner() {
         </Reveal>
         <Reveal delay={200}>
           <a
-            href="tel:+18663814782"
+            href={`tel:${SITE_PHONE.raw}`}
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.03]"
           >
-            Call (866) 381-4782 <ArrowRight className="size-4" />
+            Call {SITE_PHONE.display} <ArrowRight className="size-4" />
           </a>
         </Reveal>
       </div>
@@ -921,7 +922,7 @@ const faqs = [
   },
   {
     q: "How do I contact support?",
-    a: "Call (866) 381-4782. Our team is available Monday to Friday, 8:00 AM to 8:00 PM ET, and Saturday, 9:00 AM to 5:00 PM ET.",
+    a: `Call ${SITE_PHONE.display}. Our team is available Monday to Friday, 8:00 AM to 8:00 PM ET, and Saturday, 9:00 AM to 5:00 PM ET.`,
   },
 ];
 
@@ -941,10 +942,10 @@ export function Faq() {
                 context of your car.
               </p>
               <a
-                href="tel:+18663814782"
+                href={`tel:${SITE_PHONE.raw}`}
                 className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary"
               >
-                Call (866) 381-4782 <ArrowRight className="size-4" />
+                Call {SITE_PHONE.display} <ArrowRight className="size-4" />
               </a>
             </div>
           </Reveal>
@@ -1001,17 +1002,17 @@ export function FinalCta() {
           <Reveal delay={180}>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <a
-                href="tel:+18663814782"
+                href={`tel:${SITE_PHONE.raw}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground transition-transform duration-200 hover:scale-[1.02]"
               >
-                <MessageCircle className="size-4" /> Call (866) 381-4782
+                <MessageCircle className="size-4" /> Call {SITE_PHONE.display}
               </a>
             </div>
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-2">
-                <Headphones className="size-3.5 text-primary" /> (866) 381-4782
+                <Headphones className="size-3.5 text-primary" /> {SITE_PHONE.display}
               </span>
               <span className="inline-flex items-center gap-2">
                 <KeyRound className="size-3.5 text-primary" /> No obligation

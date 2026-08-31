@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SITE_PHONE } from "@/lib/site-contact";
 
 export const Route = createFileRoute("/privacy-policy")({
   component: PrivacyPolicyPage,
@@ -36,7 +37,7 @@ function PrivacyPolicyPage() {
 
           <h2 className="text-xl font-bold text-foreground">4. Contact Information</h2>
           <p>
-            If you have questions regarding this privacy policy, please contact us at (866) 381-4782.
+            If you have questions regarding this privacy policy, please contact us at {SITE_PHONE.display}.
           </p>
         </div>
       </main>

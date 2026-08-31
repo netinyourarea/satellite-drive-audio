@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SITE_PHONE } from "@/lib/site-contact";
 
 export const Route = createFileRoute("/refund-policy")({
   component: RefundPolicyPage,
@@ -26,7 +27,7 @@ function RefundPolicyPage() {
 
           <h2 className="text-xl font-bold text-foreground">2. Customer Support</h2>
           <p>
-            If you have any questions regarding a charge or service, please reach out to our team at (866) 381-4782.
+            If you have any questions regarding a charge or service, please reach out to our team at {SITE_PHONE.display}.
           </p>
         </div>
       </main>
