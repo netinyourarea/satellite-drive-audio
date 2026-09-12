@@ -45,6 +45,12 @@ export function SiteFooter() {
                   {SITE_PHONE.display}
                 </a>
               </li>
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
+                <a href="tel:8664761038" className="hover:text-primary transition-colors">
+                  (866) 476-1038
+                </a>
+              </li>
             </ul>
           </div>
 
