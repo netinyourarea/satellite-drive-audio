@@ -14,6 +14,7 @@ import {
   Faq,
   FinalCta,
 } from "@/components/site/sections";
+import { HelpTopics, SavingsSection, CallDesk } from "@/components/site/help-sections";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,12 +28,15 @@ function Index() {
         <Hero />
         <AboutSplit />
         <Services />
+        <HelpTopics />
         <Compatibility />
         <HowItWorks />
         <CinematicBanner />
+        <SavingsSection />
         <SupportSection />
         <Technology />
         <Testimonials />
+        <CallDesk />
         <Faq />
         <FinalCta />
       </main>
