@@ -24,67 +24,67 @@ const helpTopics = [
   {
     id: "billing",
     icon: CreditCard,
-    label: "Billing questions",
-    headline: "Make sense of a charge you didn't expect",
+    label: "Incorrect billing",
+    headline: "Get help with a charge that looks wrong",
     body: "A renewal that landed higher than planned, or a bill that doesn't add up? We help you read it line by line.",
     points: [
-      "Understand why a renewal amount changed",
-      "Compare what monthly and annual billing really cost",
-      "Learn how to update a payment method or raise a dispute",
+      "Unexpected or higher-than-expected renewal charges",
+      "Clarify monthly vs. annual pricing breakdowns",
+      "Update payment method & billing dispute assistance",
     ],
-    cta: "Talk through a billing question",
+    cta: "Call billing support",
   },
   {
     id: "cancel",
     icon: Ban,
-    label: "Ending a plan",
+    label: "Cancel subscription",
     headline: "Know your options before you cancel",
     body: "Selling the car, or simply done with a plan? We explain how ending or moving a subscription usually works.",
     points: [
-      "Review typical cancellation terms and timing",
-      "Learn how to switch off automatic renewal",
-      "Move service to a new vehicle or replacement radio",
+      "Inquire about subscription cancellation terms",
+      "Stop automatic renewal on vehicle systems",
+      "Transfer service to a new car or replacement receiver",
     ],
-    cta: "Ask about ending a plan",
+    cta: "Call cancellation help",
   },
   {
     id: "plans",
     icon: Music2,
-    label: "Comparing plans",
+    label: "Know about plans",
     headline: "Find a plan that matches how you drive",
     body: "Plan names and tiers can blur together. We lay out the differences so you can choose with confidence.",
     points: [
-      "See how single-car and multi-car setups differ",
-      "Ask about annual rates and promotional offers",
-      "Preview what the channel line-ups generally include",
+      "Save up to 40%–50% with eligible annual rates",
+      "Single vehicle, multi-car & fleet options",
+      "Check promotional discount vouchers & channel line-ups",
     ],
-    cta: "Compare plans by phone",
+    cta: "Call to compare plans",
   },
   {
     id: "signal",
     icon: RadioTower,
-    label: "Signal trouble",
+    label: "Not working / signal help",
     headline: "Get the music back when the signal drops",
     body: "“No signal”, an antenna warning or channels that won't load are often fixable. We help you narrow down the cause.",
     points: [
-      "Work through common antenna and loading messages",
-      "Use an audio preview channel to test your radio",
-      "Find out how a signal refresh or activation is requested",
+      "Fix “No Signal”, “Check Antenna”, or loading errors",
+      "Preview Channel 184 audio test guidance",
+      "Request a satellite signal refresh or radio activation",
     ],
-    cta: "Get signal help",
+    cta: "Call technical support",
   },
   {
     id: "parts",
     icon: Wrench,
-    label: "Parts & accessories",
+    label: "Shop parts & hardware",
     headline: "Pick the right hardware the first time",
     body: "Antennas, power cords and docks only help if they fit your car. We check compatibility before you buy.",
     points: [
-      "Magnetic antennas and replacement power cords",
-      "Bluetooth docks and dashboard mounting cradles",
-      "Fit advice based on your vehicle's make and model",
+      "Magnetic car antennas & replacement power cords",
+      "Bluetooth dashboard docks & mounting cradles",
+      "Expert advice on compatibility for your car make/model",
     ],
-    cta: "Ask about parts",
+    cta: "Inquire about parts",
   },
 ];
 
@@ -96,14 +96,10 @@ export function HelpTopics() {
   return (
     <section id="help-topics" className="mx-auto max-w-[88rem] px-5 py-24 lg:px-10 lg:py-32">
       <Reveal>
-        <p className="eyebrow">Pick Your Topic</p>
+        <p className="eyebrow">Select Your Issue Below</p>
         <h2 className="mt-5 max-w-2xl text-3xl leading-tight font-extrabold sm:text-4xl lg:text-[2.75rem]">
-          Tell Us What's Going On
+          What Can We Help You With Today?
         </h2>
-        <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Choose the closest match and see how we can help. Every topic ends with the same simple
-          step: one call to a person who can look at your situation.
-        </p>
       </Reveal>
 
       <Reveal delay={120}>
@@ -176,30 +172,30 @@ export function HelpTopics() {
 
 const featuredSaving = {
   icon: BadgePercent,
-  title: "Annual plans can cost less",
-  body: "Paying for a full year is often priced below twelve separate months. Ask which annual rates you may qualify for.",
+  title: "Save Up to 40%",
+  body: "Cut your annual cost with up to 40% off eligible annual plans. Terms apply.",
 };
 
 const savingsIdeas = [
   {
     icon: Users,
-    title: "Share the cost across cars",
-    body: "Households with more than one equipped vehicle may be able to bundle them under a single arrangement.",
+    title: "Bigger Family Savings",
+    body: "Combine eligible systems and cut your overall subscription cost with a family plan.",
   },
   {
     icon: Trophy,
-    title: "Sports for less",
-    body: "Game-day coverage is sometimes offered at promotional pricing. Availability changes with the season.",
+    title: "Pay Less for Sports",
+    body: "Enjoy sports coverage for less. Check current promotional pricing and eligibility.",
   },
   {
     icon: TrendingDown,
-    title: "Trim the monthly bill",
-    body: "A lighter plan may cover what you actually listen to. We help you spot what you pay for but never use.",
+    title: "Lower Your Monthly Cost",
+    body: "Explore available plans that can help reduce your monthly subscription expense.",
   },
   {
     icon: Layers,
-    title: "Less back-and-forth",
-    body: "We help you gather the details first, so finding a better arrangement takes minutes instead of repeated calls.",
+    title: "More Savings, Less Hassle",
+    body: "Bundle eligible systems, lower your overall cost, and get help finding available savings.",
   },
 ];
 
@@ -220,14 +216,13 @@ export function SavingsSection() {
       <div className="mx-auto max-w-[88rem] px-5 py-24 lg:px-10 lg:py-32">
         <Reveal>
           <p className="eyebrow" style={{ color: "oklch(0.85 0.15 65)" }}>
-            Spend Smarter
+            Savings Opportunities
           </p>
           <h2 className="mt-5 max-w-2xl text-3xl leading-tight font-extrabold text-white sm:text-4xl lg:text-[2.75rem]">
-            Ways to Lower What You Pay for Satellite Radio
+            Ways You May Lower Your Satellite Radio Cost
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/70">
-            Five places worth looking before your next renewal. Offers change, so we help you check
-            what's open to you today.
+            Explore these savings options — check current eligibility and pricing.
           </p>
         </Reveal>
 
@@ -282,9 +277,8 @@ export function SavingsSection() {
 
         <Reveal delay={200}>
           <p className="mt-8 max-w-3xl text-xs leading-relaxed text-white/50">
-            Eligibility, pricing and offer length vary and are not guaranteed. Subscription plans
-            are sold by the service provider, separately from any radio hardware. We offer general
-            guidance only.
+            Offers vary. Eligibility, pricing, and duration are not guaranteed on this page. Plans
+            are typically sold separately from satellite radio hardware.
           </p>
         </Reveal>
       </div>
@@ -295,10 +289,10 @@ export function SavingsSection() {
 /* -------------------------------- Call desk ------------------------------- */
 
 const callReasons = [
-  "Starting or activating service",
-  "A billing question",
-  "Ending or moving a plan",
-  "Signal or antenna trouble",
+  "Call to activate your radio",
+  "Call for billing issue",
+  "Live cancellation help now",
+  "Cancel your subscription today",
 ];
 
 export function CallDesk() {
@@ -322,14 +316,15 @@ export function CallDesk() {
           <div>
             <Reveal>
               <p className="eyebrow" style={{ color: "oklch(0.85 0.15 65)" }}>
-                Talk to a Person
+                Need Help?
               </p>
               <h2 className="mt-5 text-3xl leading-tight font-extrabold text-white sm:text-4xl lg:text-[2.75rem]">
-                Prefer to Just Call?
+                Call for Assistance
               </h2>
               <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 sm:text-base">
-                Our team can walk you through activation, signal problems, billing and plan
-                choices in one conversation. Availability and offers may vary.
+                Representatives can help with common satellite radio questions — activation, signal
+                issues, subscription billing, and plan options. Use the number on this page to
+                speak with someone about your situation. Offers and availability may vary.
               </p>
             </Reveal>
             <Reveal delay={100}>
@@ -363,7 +358,7 @@ export function CallDesk() {
               }}
             >
               <p className="text-[0.7rem] font-bold tracking-[0.22em] text-white/60 uppercase">
-                Call us toll-free
+                Toll-free directory number
               </p>
               <a
                 href={`tel:${SITE_PHONE.raw}`}
@@ -383,7 +378,7 @@ export function CallDesk() {
               </a>
               <p className="mt-6 flex items-start justify-center gap-2 text-xs leading-relaxed text-white/60">
                 <Clock className="mt-0.5 size-3.5 shrink-0" />
-                Mon–Fri 8 AM–8 PM ET · Sat 9 AM–5 PM ET
+                Toll-free · Common radio models · Ask about hours when you call
               </p>
             </div>
           </Reveal>
