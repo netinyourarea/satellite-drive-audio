@@ -24,9 +24,7 @@ const helpTopics = [
   {
     id: "billing",
     icon: CreditCard,
-    label: "Incorrect billing",
-    headline: "Get help with a charge that looks wrong",
-    body: "A renewal that landed higher than planned, or a bill that doesn't add up? We help you read it line by line.",
+    label: "Incorrect Billing",
     points: [
       "Unexpected or higher-than-expected renewal charges",
       "Clarify monthly vs. annual pricing breakdowns",
@@ -37,9 +35,7 @@ const helpTopics = [
   {
     id: "cancel",
     icon: Ban,
-    label: "Cancel subscription",
-    headline: "Know your options before you cancel",
-    body: "Selling the car, or simply done with a plan? We explain how ending or moving a subscription usually works.",
+    label: "Cancel Subscription",
     points: [
       "Inquire about subscription cancellation terms",
       "Stop automatic renewal on vehicle systems",
@@ -50,9 +46,7 @@ const helpTopics = [
   {
     id: "plans",
     icon: Music2,
-    label: "Know about plans",
-    headline: "Find a plan that matches how you drive",
-    body: "Plan names and tiers can blur together. We lay out the differences so you can choose with confidence.",
+    label: "Know About Plans",
     points: [
       "Save up to 40%–50% with eligible annual rates",
       "Single vehicle, multi-car & fleet options",
@@ -63,9 +57,7 @@ const helpTopics = [
   {
     id: "signal",
     icon: RadioTower,
-    label: "Not working / signal help",
-    headline: "Get the music back when the signal drops",
-    body: "“No signal”, an antenna warning or channels that won't load are often fixable. We help you narrow down the cause.",
+    label: "Not Working / Signal Help",
     points: [
       "Fix “No Signal”, “Check Antenna”, or loading errors",
       "Preview Channel 184 audio test guidance",
@@ -76,9 +68,7 @@ const helpTopics = [
   {
     id: "parts",
     icon: Wrench,
-    label: "Shop parts & hardware",
-    headline: "Pick the right hardware the first time",
-    body: "Antennas, power cords and docks only help if they fit your car. We check compatibility before you buy.",
+    label: "Shop Parts & Hardware",
     points: [
       "Magnetic car antennas & replacement power cords",
       "Bluetooth dashboard docks & mounting cradles",
@@ -141,12 +131,7 @@ export function HelpTopics() {
             <span className="grid size-14 place-items-center rounded-2xl bg-primary/12">
               <topic.icon className="size-7 text-primary" />
             </span>
-            <div>
-              <h3 className="text-2xl font-bold sm:text-3xl">{topic.headline}</h3>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {topic.body}
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold sm:text-3xl">{topic.label}</h3>
             <ul className="space-y-3">
               {topic.points.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-sm text-foreground/90">
@@ -280,6 +265,17 @@ export function SavingsSection() {
             Offers vary. Eligibility, pricing, and duration are not guaranteed on this page. Plans
             are typically sold separately from satellite radio hardware.
           </p>
+          <p
+            className="mt-4 rounded-xl px-5 py-3 text-center text-xs font-bold"
+            style={{
+              background: "oklch(0.55 0.2 25 / 18%)",
+              border: "1px solid oklch(0.65 0.2 25 / 35%)",
+              color: "oklch(0.85 0.1 25)",
+            }}
+          >
+            Note: Plans are sold separately from satellite radio hardware. Pricing is not
+            guaranteed on this page.
+          </p>
         </Reveal>
       </div>
     </section>
@@ -292,7 +288,7 @@ const callReasons = [
   "Call to activate your radio",
   "Call for billing issue",
   "Live cancellation help now",
-  "Cancel your subscription today",
+  "Cancel your subs today",
 ];
 
 export function CallDesk() {
@@ -323,7 +319,7 @@ export function CallDesk() {
               </h2>
               <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 sm:text-base">
                 Representatives can help with common satellite radio questions — activation, signal
-                issues, subscription billing, and plan options. Use the number on this page to
+                issues, subscription billing, and plan options. Use the masked number below to
                 speak with someone about your situation. Offers and availability may vary.
               </p>
             </Reveal>
