@@ -188,18 +188,6 @@ export function Hero() {
               Call {SITE_PHONE.display}
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
-            <a
-              href="tel:+18664761038"
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-[1.02]"
-              style={{
-                background: "oklch(1 0 0 / 12%)",
-                border: "1px solid oklch(0.72 0.18 55 / 55%)",
-                color: "#ffffff",
-              }}
-            >
-              Call (866) 476-1038
-              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
           </div>
 
           {/* Divider */}
